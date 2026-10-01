@@ -7,63 +7,53 @@
 <meta name="description" content="No Sacred Cows — essays and opinions from Leon Link. Business: software, pricing, marketing. Personal: law, culture, origins. No dogma.">
 <meta property="og:title" content="No Sacred Cows — Leon Link">
 <meta property="og:description" content="Essays and opinions. Business: software, pricing, marketing. Personal: law, culture, origins. No dogma.">
-<meta name="theme-color" content="#0e1419">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<meta property="og:image" content="https://blog.leonlink.net/logo.png">
+<meta name="theme-color" content="#0c0c0e">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--faint:#6a737b;--accent:#66c0f4;--accent2:#1a9fff;--green:#a1cd44;--pad:16px}
+:root{--bg:#0c0c0e;--panel:#141417;--panel2:#191a1e;--line:#26262b;--ink:#f2f2f0;--muted:#a3a3ab;--faint:#77777f;--accent:#f2c14e;--accent-ink:#1a1a1a;--green:#183d2a;--green2:#1f4d35;--lime:#d9f16b;--rose:#e07a5f;--pad:16px}
 *{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:16px/1.5 "DM Sans",system-ui,sans-serif;min-height:100vh;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0)}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0)}
 a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
-nav{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:max(10px,env(safe-area-inset-top,0)) var(--pad) 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,20,25,.95);z-index:40}
+nav{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:max(10px,env(safe-area-inset-top,0)) var(--pad) 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(12,12,14,.92);backdrop-filter:blur(8px);z-index:40}
 .nav-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .nav-bottom{display:flex;width:100%}
-.nav-bottom .cta{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;background:var(--accent2)!important;color:#fff!important;font-weight:600!important;border-radius:6px;padding:10px 16px}
-.brand{color:#fff;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:8px}
+.nav-bottom .cta{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;background:var(--accent)!important;color:var(--accent-ink)!important;font-weight:600!important;border-radius:8px;padding:10px 16px}
+.brand{color:var(--ink);font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:10px}
+.brand img{width:30px;height:30px;border-radius:50%;border:2px solid rgba(242,193,78,.5)}
 .links{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
 .links a{color:var(--muted);padding:10px;border-radius:4px;font-size:.85rem;min-height:40px;display:inline-flex;align-items:center}
-.links a.active,.links a:hover{color:#fff;background:rgba(255,255,255,.06)}
-.theme-btn{background:var(--panel);border:1px solid var(--line);color:var(--muted);width:44px;height:44px;border-radius:8px;cursor:pointer;font-size:1.05rem;display:grid;place-items:center}
-.banner{height:140px;border-bottom:1px solid var(--line);background:linear-gradient(120deg,#1b2838,#1a3a50 45%,#1a9fff33)}
+.links a.active,.links a:hover{color:var(--accent);background:rgba(242,193,78,.07)}
+.banner{height:130px;border-bottom:1px solid var(--line);background:radial-gradient(1100px 480px at 50% -120px,rgba(242,193,78,.12),transparent),linear-gradient(160deg,var(--green),var(--green2))}
 .bar{display:flex;gap:16px;padding:0 var(--pad);margin-top:-40px;align-items:flex-end;padding-bottom:20px;flex-wrap:wrap}
-.av{width:80px;height:80px;border-radius:8px;border:3px solid var(--bg);flex-shrink:0;display:grid;place-items:center;background:linear-gradient(145deg,#1a9fff,#1b2838)}
-.meta h1{font-size:1.4rem;color:#fff;margin-bottom:4px}
+.av{width:88px;height:88px;border-radius:50%;border:3px solid rgba(242,193,78,.5);flex-shrink:0;overflow:hidden;background:var(--green)}
+.av img{width:100%;height:100%;display:block}
+.meta h1{font-family:Fraunces,Georgia,serif;font-size:1.55rem;color:var(--ink);margin-bottom:4px}
 .st{font-size:.85rem;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
-.stats{display:flex;gap:14px;flex-wrap:wrap}.stat{display:flex;flex-direction:column}.stat strong{color:#fff}.stat span{font-size:.7rem;color:var(--faint);text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.stats{display:flex;gap:14px;flex-wrap:wrap}.stat{display:flex;flex-direction:column}.stat strong{color:var(--accent)}.stat span{font-size:.7rem;color:var(--faint);text-transform:uppercase}
 main{max-width:960px;margin:0 auto;padding:8px var(--pad) 40px}
-.sec{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sec{font-family:Fraunces,Georgia,serif;font-size:1rem;font-weight:600;color:var(--accent);margin:32px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .sec-sub{font-size:.8rem;color:var(--faint);margin:6px 0 14px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:var(--panel);border-radius:6px;overflow:hidden;border:1px solid transparent;display:block;color:inherit}
-.card:hover{border-color:var(--accent);color:inherit}
+.card{background:var(--panel);border-radius:8px;overflow:hidden;border:1px solid var(--line);display:block;color:inherit;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);color:inherit;transform:translateY(-2px)}
 .cover{height:90px;display:flex;align-items:flex-end;padding:10px;position:relative}
 .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75))}
-.cover span{position:relative;z-index:1;font-weight:700;color:#fff;font-size:.95rem}
+.cover span{position:relative;z-index:1;font-family:Fraunces,Georgia,serif;font-weight:600;color:#fff;font-size:.98rem}
 .card-meta{padding:10px 12px}.genre{font-size:.7rem;color:var(--accent);font-weight:600;text-transform:uppercase;margin-bottom:4px}
 .blurb{font-size:.8rem;color:var(--muted)}
 @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr);gap:14px}.cover{height:100px}.banner{height:180px}}
-footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}footer a{margin:0 8px}
-html[data-theme="light"]{--bg:#f4f6f8;--panel:#fff;--line:#d0d7de;--ink:#1a2332;--muted:#5a6570;--faint:#8a939c;--accent:#1a9fff;--accent2:#0d8ae6}
-html[data-theme="light"] body{color:var(--ink)}html[data-theme="light"] .brand,.meta h1,.stat strong{color:var(--ink)}
-html[data-theme="light"] nav{background:rgba(244,246,248,.95)}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--faint);font-size:.8rem}footer a{margin:0 8px}
 </style>
-<script>
-(function(){var k='ll-theme',root=document.documentElement,saved=localStorage.getItem(k);
-if(saved==='light')root.setAttribute('data-theme','light');else root.removeAttribute('data-theme');
-function sync(){var b=document.getElementById('themeBtn');if(b)b.textContent=root.getAttribute('data-theme')==='light'?'\u263E':'\u2600';}
-function toggle(){if(root.getAttribute('data-theme')==='light'){root.removeAttribute('data-theme');localStorage.setItem(k,'dark');}else{root.setAttribute('data-theme','light');localStorage.setItem(k,'light');}sync();}
-document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('themeBtn');if(b){sync();b.onclick=toggle;}});
-})();
-</script>
 </head>
 <body>
 <nav>
 <div class="nav-top">
-<a href="https://www.leonlink.net" class="brand"><svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a9fff"/><stop offset="1" stop-color="#66c0f4"/></linearGradient></defs><rect width="32" height="32" rx="7" fill="url(#g1)"/><path d="M10 16h12M14 12l-4 4 4 4M18 12l4 4-4 4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Leon Link</span></a>
+<a href="https://www.leonlink.net" class="brand"><img src="/logo.png" alt="Leon Link — the boss and the dog"><span>Leon Link</span></a>
 <div class="links">
 <a href="#business">Business</a>
 <a href="#personal">Personal</a>
-<button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">&#9728;</button>
 </div>
 </div>
 <div class="nav-bottom">
@@ -72,7 +62,7 @@ document.addEventListener('DOMContentLoaded',function(){var b=document.getElemen
 </nav>
 <div class="banner"></div>
 <div class="bar">
-<div class="av"><svg viewBox="0 0 32 32" width="48" height="48"><path d="M8 9v14c3.5-1.8 5.5-1.8 8 0 2.5-1.8 4.5-1.8 8 0V9c-3.5 1.5-5.5 1.5-8 0-2.5 1.5-4.5 1.5-8 0z" stroke="#fff" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M16 10v12" stroke="#fff" stroke-width="1.3"/></svg></div>
+<div class="av"><img src="/logo.png" alt="The boss and the dog"></div>
 <div class="meta">
 <h1>No Sacred Cows</h1>
 <p class="st"><span class="dot"></span>Active · Let's slay some cows</p>
@@ -83,24 +73,24 @@ document.addEventListener('DOMContentLoaded',function(){var b=document.getElemen
 <div class="sec" id="business">Business</div>
 <p class="sec-sub">Software, pricing, marketing — opinions with numbers behind them.</p>
 <div class="grid">
-<a class="card" href="/trades-software-tax.html"><div class="cover" style="background:linear-gradient(135deg,#0c3020,#05140c)"><span>The trades software tax</span></div><div class="card-meta"><div class="genre">Business · Field service</div><div class="blurb">Preconception: field software is expensive because it's enterprise-grade. It's a tax on hiring.</div></div></a>
-<a class="card" href="/per-seat-pricing.html"><div class="cover" style="background:linear-gradient(135deg,#40290c,#140b05)"><span>Per-seat pricing is dying</span></div><div class="card-meta"><div class="genre">Business · Pricing</div><div class="blurb">Preconception: you pay for software per person, per month. Always have. The model is collapsing in real time.</div></div></a>
-<a class="card" href="/ai-you-didnt-ask-for.html"><div class="cover" style="background:linear-gradient(135deg,#0c2040,#050a14)"><span>You're paying for AI you didn't ask for</span></div><div class="card-meta"><div class="genre">Business · Software</div><div class="blurb">Preconception: price increases are because AI is expensive. Most of it is bundling with a neural accent.</div></div></a>
-<a class="card" href="/seo-is-dead.html"><div class="cover" style="background:linear-gradient(135deg,#301c40,#140a18)"><span>SEO died and nobody held a funeral</span></div><div class="card-meta"><div class="genre">Business · Marketing</div><div class="blurb">Preconception: rank on Google and customers find you. The ten blue links are gone. Be quotable instead.</div></div></a>
-<a class="card" href="/review-gating.html"><div class="cover" style="background:linear-gradient(135deg,#40141c,#140508)"><span>Review gating is fraud with a smile</span></div><div class="card-meta"><div class="genre">Business · Reputation</div><div class="blurb">Preconception: asking only happy customers for reviews is smart marketing. The law disagrees.</div></div></a>
+<a class="card" href="/trades-software-tax.html"><div class="cover" style="background:linear-gradient(135deg,#1f4d35,#0c0c0e)"><span>The trades software tax</span></div><div class="card-meta"><div class="genre">Business · Field service</div><div class="blurb">Preconception: field software is expensive because it's enterprise-grade. It's a tax on hiring.</div></div></a>
+<a class="card" href="/per-seat-pricing.html"><div class="cover" style="background:linear-gradient(135deg,#4d3b1f,#0c0c0e)"><span>Per-seat pricing is dying</span></div><div class="card-meta"><div class="genre">Business · Pricing</div><div class="blurb">Preconception: you pay for software per person, per month. Always have. The model is collapsing in real time.</div></div></a>
+<a class="card" href="/ai-you-didnt-ask-for.html"><div class="cover" style="background:linear-gradient(135deg,#3d3423,#0c0c0e)"><span>You're paying for AI you didn't ask for</span></div><div class="card-meta"><div class="genre">Business · Software</div><div class="blurb">Preconception: price increases are because AI is expensive. Most of it is bundling with a neural accent.</div></div></a>
+<a class="card" href="/seo-is-dead.html"><div class="cover" style="background:linear-gradient(135deg,#2a3d1f,#0c0c0e)"><span>SEO died and nobody held a funeral</span></div><div class="card-meta"><div class="genre">Business · Marketing</div><div class="blurb">Preconception: rank on Google and customers find you. The ten blue links are gone. Be quotable instead.</div></div></a>
+<a class="card" href="/review-gating.html"><div class="cover" style="background:linear-gradient(135deg,#4d1f1a,#0c0c0e)"><span>Review gating is fraud with a smile</span></div><div class="card-meta"><div class="genre">Business · Reputation</div><div class="blurb">Preconception: asking only happy customers for reviews is smart marketing. The law disagrees.</div></div></a>
 
 </div>
 <div class="sec" id="personal">Personal</div>
 <p class="sec-sub">Essays on law, culture, origins. No dogma, no cows spared.</p>
 <div class="grid">
-<a class="card" href="/christa-pike.html"><div class="cover" style="background:linear-gradient(135deg,#1a2a3a,#0c1520)"><span>Two doses and a heartbeat</span></div><div class="card-meta"><div class="genre">Personal · Law</div><div class="blurb">Tennessee fumbled an execution on Sept 30, 2026. Whatever you believe, the state must be able to carry out its own orders.</div></div></a>
-<a class="card" href="/long-way-home.html"><div class="cover" style="background:linear-gradient(135deg,#0c2040,#050a14)"><span>The Long Way Home</span></div><div class="card-meta"><div class="genre">Origins</div><div class="blurb">Preconception: we were created as humans.</div></div></a>
-<a class="card" href="/commonwealth.html"><div class="cover" style="background:linear-gradient(135deg,#1a2a3a,#0c1520)"><span>Commonwealth vs State</span></div><div class="card-meta"><div class="genre">Law</div><div class="blurb">Preconception: commonwealth runs courts differently than a state.</div></div></a>
-<a class="card" href="/abrahamic.html"><div class="cover" style="background:linear-gradient(135deg,#1a3040,#0c1520)"><span>Abrahamic Religions</span></div><div class="card-meta"><div class="genre">Comparison</div><div class="blurb">Judaism, Christianity, Islam — shared roots, no winner.</div></div></a>
-<a class="card" href="/self-made-myth.html"><div class="cover" style="background:linear-gradient(135deg,#2a1a30,#120c18)"><span>The Self-Made Myth</span></div><div class="card-meta"><div class="genre">Culture</div><div class="blurb">Preconception: successful people made it alone — no help, no luck, no systems.</div></div></a>
+<a class="card" href="/christa-pike.html"><div class="cover" style="background:linear-gradient(135deg,#1f4d35,#0c0c0e)"><span>Two doses and a heartbeat</span></div><div class="card-meta"><div class="genre">Personal · Law</div><div class="blurb">Tennessee fumbled an execution on Sept 30, 2026. Whatever you believe, the state must be able to carry out its own orders.</div></div></a>
+<a class="card" href="/long-way-home.html"><div class="cover" style="background:linear-gradient(135deg,#183d2a,#0c0c0e)"><span>The Long Way Home</span></div><div class="card-meta"><div class="genre">Origins</div><div class="blurb">Preconception: we were created as humans.</div></div></a>
+<a class="card" href="/commonwealth.html"><div class="cover" style="background:linear-gradient(135deg,#3d3423,#0c0c0e)"><span>Commonwealth vs State</span></div><div class="card-meta"><div class="genre">Law</div><div class="blurb">Preconception: commonwealth runs courts differently than a state.</div></div></a>
+<a class="card" href="/abrahamic.html"><div class="cover" style="background:linear-gradient(135deg,#2a3d1f,#0c0c0e)"><span>Abrahamic Religions</span></div><div class="card-meta"><div class="genre">Comparison</div><div class="blurb">Judaism, Christianity, Islam — shared roots, no winner.</div></div></a>
+<a class="card" href="/self-made-myth.html"><div class="cover" style="background:linear-gradient(135deg,#4d1f1a,#0c0c0e)"><span>The Self-Made Myth</span></div><div class="card-meta"><div class="genre">Culture</div><div class="blurb">Preconception: successful people made it alone — no help, no luck, no systems.</div></div></a>
 
 </div>
 </main>
-<footer>&copy; Leon Link &middot; <a href="https://www.leonlink.net">Home</a> &middot; <a href="https://www.leonlink.net/#work">Work</a></footer>
+<footer>&copy; 2026 Leon Link &middot; <a href="https://www.leonlink.net">Home</a> &middot; <a href="https://www.leonlink.net/#work">Work</a> &middot; every creation stars the same two</footer>
 </body>
 </html>
