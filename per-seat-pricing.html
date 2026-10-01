@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Per-seat pricing is dying — and the vendors know it — No Sacred Cows</title>
+<meta name="description" content="The per-seat SaaS model assumed humans were what software bills for. AI agents broke that. The math, the renewal squeeze, and what fair pricing looks like in 2026.">
+<meta property="og:title" content="Per-seat pricing is dying — and the vendors know it — No Sacred Cows">
+<meta property="og:description" content="The per-seat SaaS model assumed humans were what software bills for. AI agents broke that. The math, the renewal squeeze, and what fair pricing looks like in 2026.">
+<meta property="og:url" content="https://blog.leonlink.net/per-seat-pricing">
+<meta name="theme-color" content="#0e1419">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--accent:#e8a54b;--pad:18px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,20,25,.95);flex-wrap:wrap;gap:8px}
+.brand{color:var(--muted);font-weight:600;font-size:.9rem}
+.links a{color:var(--muted);padding:8px 10px;font-size:.85rem}article{max-width:740px;margin:0 auto;padding:28px var(--pad) 56px}
+.genre{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.65rem,4.5vw,2.15rem);color:#fff;line-height:1.2;margin-bottom:16px}
+.callout{background:var(--panel);border-left:3px solid var(--accent);padding:14px 16px;margin:20px 0 24px;border-radius:0 6px 6px 0}
+.callout strong{color:#fff;display:block;margin-bottom:4px;font-size:.8rem;text-transform:uppercase}
+.callout p{color:var(--muted);font-size:.95rem;margin:0}
+h2{font-size:1.2rem;color:#fff;margin:32px 0 12px}
+p{color:var(--muted);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{background:var(--panel);color:#fff}td{color:var(--muted)}
+.note{background:var(--panel);padding:14px 16px;border-radius:6px;margin:16px 0;font-size:.92rem;color:var(--muted)}.note strong{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:20px;font-size:.8rem;color:var(--muted);cursor:pointer;font-family:inherit}
+.chip.on{border-color:var(--accent);color:#fff}
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.toggle-row button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.toggle-row button.on{border-color:var(--accent);color:#fff}
+.panel-out{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.55;min-height:1.4em}
+.back{display:inline-block;margin-top:32px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}
+
+.share{display:flex;align-items:center;gap:8px;margin:28px 0 8px;flex-wrap:wrap}
+.share span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.share button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;cursor:pointer;font:inherit;font-size:.8rem}
+.share button:hover{border-color:var(--accent);color:#fff}
+.calc{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.calc-row{display:flex;align-items:center;gap:10px;margin:10px 0;flex-wrap:wrap}
+.calc-l{font-size:.85rem;color:var(--ink);min-width:150px}
+.calc-v{font-weight:700;color:#fff;min-width:48px;text-align:right}
+.calc-out{margin-top:10px;font-size:.95rem;color:var(--muted);line-height:1.6}
+.poll{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.poll-q{color:#fff;font-weight:600;margin-bottom:10px}
+.poll-btns{display:flex;gap:8px;flex-wrap:wrap}
+.poll button{background:var(--bg);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.poll button:hover{color:#fff;border-color:var(--accent)}
+.poll button.voted{opacity:.55;cursor:default}
+.warn{color:#e8a54b}.ok{color:#a1cd44}
+input[type=range]{accent-color:var(--accent);flex:1;min-width:140px}
+</style>
+</head>
+<body>
+<nav>
+<a href="/" class="brand">&larr; No Sacred Cows</a>
+<div class="links"><a href="https://www.leonlink.net">Home</a><a href="/#business">Business</a><a href="/#personal">Personal</a></div>
+</nav>
+<article>
+<div class="genre">Business · Pricing</div>
+<h1>Per-seat pricing is dying — and the vendors know it</h1>
+<div class="callout"><strong>Preconception</strong><p>You pay for software per person, per month. That is just how software is priced. It has always been this way and always will be.</p></div>
+<p>No. It has been this way since 2010, it is breaking in front of everyone right now, and the people selling you the seats are the ones who can see it clearest. They just cannot say it out loud, because their entire revenue line depends on pretending otherwise.</p>
+<p>In the first weeks of 2026, software companies lost over a trillion dollars of market value in eight weeks. Analysts have taken to calling it the <strong>SaaSocalypse</strong>. The market was not punishing bad products. It was repricing a business model — the per-seat subscription — that quietly assumed humans were the thing software bills for. Then AI agents showed up and started doing the work of humans, and the assumption collapsed. Pure per-seat pricing has fallen below twenty percent of the market and is still dropping.</p>
+<h2>The seat was always a proxy — and proxies rot</h2>
+<p>Per-seat pricing was never really about seats. It was a convenience. Vendors needed a number that grew with the customer, and headcount was the easiest one to find. If the crew got bigger, the bill got bigger. Close enough.</p>
+<p>But a proxy only works while it tracks value. When one person armed with an AI agent can do the work of five, the number of people logged in stops telling you anything about how much they are getting out of the tool. Charging per person now actively punishes the customer for adopting the AI features the vendor spent two years building. Think about how upside down that is: the vendor ships a feature that makes each user ten times more productive, and the pricing model responds by billing for fewer users.</p>
+<h2>The agents don't buy seats</h2>
+<p>Gartner expects forty percent of enterprise apps to embed task-specific AI agents by the end of 2026, up from under five percent a year before. Agents do not log in. They do not appear in an admin dashboard. They do not occupy a seat, but they absolutely consume the product. The billing unit and the value unit have officially separated, and every vendor is now scrambling to stitch them back together before their renewal calls go to hell.</p>
+<div class="note"><strong>The tell.</strong> When Satya Nadella describes seats as "just entitlement to some consumption," that is not a vision statement. That is the biggest software company on earth admitting the seat is a shell. They are already pricing the actual thing — the work — and the seat is becoming a keychain.</div>
+<h2>The renewal-call squeeze</h2>
+<p>Buyers are not naive about why this is happening. In one 2026 survey of IT leaders, seventy-nine percent said they hit a price increase at their last renewal, with a median bump around eight percent — and the number one named driver was not inflation or infrastructure. It was <strong>forced AI bundling</strong>: vendors slapping an AI tier onto the renewal and calling the old price "legacy."</p>
+<p>You are not paying more because the AI is expensive to run. You are paying more because the vendor's growth chart went flat and the AI was the only story the board would accept.</p>
+<h2>Where this lands</h2>
+<p>Hybrid pricing — a predictable base plus usage on top — is now the most common structure among serious software companies, at around thirty-seven percent and climbing. Outcome-based pricing, where you pay for completed work instead of access, is the direction everyone claims to be heading and almost nobody has honestly reached. The pattern underneath both is the same: <strong>pay for value delivered, not butts in chairs.</strong></p>
+<div class="chips" id="mChips"></div>
+<div class="panel-out" id="mOut"></div>
+<script>
+const mach=[["Per-seat","Bills people. Works until software stops needing people. Every AI feature makes it worse. Dead model walking."],["Hybrid","Flat base plus usage. Predictable for you, honest for the vendor. Where most of the market is landing in 2026."],["Outcome-based","Pay per completed job, filed report, or closed ticket. The endgame. Almost nobody has done it right yet."],["Flat / whole-crew","One price, everyone included. The simplest honest answer for small teams — and the one incumbents can't match without gutting their revenue."]];
+const mc=document.getElementById('mChips'),mo=document.getElementById('mOut');
+mach.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...mc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');mo.textContent=t};mc.appendChild(b);if(i===0)b.click()});
+</script>
+<h2>The math the incumbents hope you never run</h2>
+<p>Run your own numbers. Drag the crew size and watch what per-seat pricing does to a small business that is just trying to grow.</p>
+<div class="calc">
+<div class="calc-row"><span class="calc-l">People on the crew</span><input type="range" id="seatN" min="1" max="20" value="3"><span class="calc-v" id="seatNv">3</span></div>
+<div class="calc-row"><span class="calc-l">Per-seat price / month</span><input type="range" id="seatP" min="25" max="100" value="49" step="1"><span class="calc-v" id="seatPv">$49</span></div>
+<div class="calc-out" id="seatOut"></div>
+</div>
+<script>
+(function(){var n=document.getElementById('seatN'),p=document.getElementById('seatP'),o=document.getElementById('seatOut'),nv=document.getElementById('seatNv'),pv=document.getElementById('seatPv');
+function f(){var a=+n.value,b=+p.value;nv.textContent=a;pv.textContent='$'+b;var per=a*b,flat=Math.ceil(46.5*2),d=per-flat;
+o.innerHTML='Per-seat: <strong>$'+per+'/mo</strong> ($'+(per*12).toLocaleString()+'/yr)<br>Flat whole-crew: <strong>$46.50/mo</strong> ($'+(46.5*12).toLocaleString()+'/yr)<br>'+(d>0?'<span class="warn">Per-seat costs you $'+d.toLocaleString()+' more per month — $'+(d*12).toLocaleString()+' a year. That is a hire.</span>':'<span class="ok">At this size the gap is small. Watch it grow.</span>');}
+n.oninput=f;p.oninput=f;f();})();
+</script>
+<p>That gap is not a rounding error. It is a payroll line item, and it grows every time you hire — which is exactly backwards. Your software should get cheaper per person as you grow, not more expensive. Every new tech should make the math better, not worse.</p>
+<h2>Bottom line</h2>
+<p>Per-seat pricing made sense when software was a tool that humans operated one at a time. That era is over. The trillion-dollar repricing of early 2026 was the market saying it out loud. The vendors still billing per head know the model is dying — that is why they are burying the increases inside "AI upgrades" instead of defending the price on its merits.</p>
+<p>When someone quotes you a price that multiplies by your headcount, ask one question: does your product cost more when my team grows? No. Then it's not a price. It's a tax on growth, and you should say so at renewal.</p>
+
+<div class="share"><span>Share</span><button type="button" data-s="x">&#120143; Post</button><button type="button" data-s="li">LinkedIn</button><button type="button" data-s="fb">Facebook</button><button type="button" data-s="rd">Reddit</button><button type="button" data-s="cp">Copy link</button></div>
+<a class="back" href="/">&larr; Back to the blog</a>
+</article>
+<footer>&copy; Leon Link &middot; No Sacred Cows</footer>
+<script>
+(function(){var U='https://blog.leonlink.net/{slug}',T=document.title;
+function enc(s){return encodeURIComponent(s)}
+var links={x:'https://twitter.com/intent/tweet?url='+enc(U)+'&text='+enc(T),li:'https://www.linkedin.com/sharing/share-offsite/?url='+enc(U),fb:'https://www.facebook.com/sharer/sharer.php?u='+enc(U),rd:'https://www.reddit.com/submit?url='+enc(U)+'&title='+enc(T)};
+var bar=document.querySelector('.share');if(!bar)return;
+bar.querySelectorAll('button').forEach(function(b){b.onclick=function(){var s=b.getAttribute('data-s');
+if(s==='cp'){navigator.clipboard&&navigator.clipboard.writeText(U).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy link'},1600)});}
+else if(links[s]){window.open(links[s],'_blank','noopener');}};});
+})();
+</script>
+</body>
+</html>
