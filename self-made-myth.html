@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Self-Made Myth — No Sacred Cows</title>
+<meta name="theme-color" content="#0e1419">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--faint:#6a737b;--accent:#66c0f4;--accent2:#1a9fff;--pad:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);border-bottom:1px solid var(--line);flex-wrap:wrap;gap:8px}
+.brand{color:#fff;font-weight:600;font-size:.9rem}
+article{max-width:680px;margin:0 auto;padding:28px var(--pad) 56px}
+.kicker{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px}
+h1{font-size:clamp(1.5rem,5vw,2rem);color:#fff;line-height:1.2;margin-bottom:12px}
+.pre{background:var(--panel);border-left:3px solid var(--accent);padding:14px 16px;border-radius:0 8px 8px 0;margin:20px 0;color:var(--muted)}
+h2{color:#fff;font-size:1.15rem;margin:28px 0 10px}
+p{margin-bottom:14px;color:var(--ink)}
+.muted{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:20px;font-size:.85rem;cursor:pointer;color:var(--muted)}
+.chip.on,.chip:hover{border-color:var(--accent);color:#fff}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin:16px 0;min-height:4em}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem}
+th,td{border:1px solid var(--line);padding:10px;text-align:left}
+th{background:var(--panel);color:#fff;font-size:.75rem;text-transform:uppercase}
+.quote{border-left:3px solid var(--line);padding-left:14px;color:var(--muted);font-style:italic;margin:18px 0}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="/sacred.html">← No Sacred Cows</a>
+<a href="https://www.leonlink.net">Leon Link</a>
+</nav>
+<article>
+<p class="kicker">Culture · No Sacred Cows</p>
+<h1>The Self-Made Myth</h1>
+<p class="muted">Preconception under the knife: successful people made it alone — pure grit, no help, no luck, no systems.</p>
+<div class="pre"><strong>The claim:</strong> “I built this from nothing. Nobody helped me. Anyone can do the same if they want it enough.”</div>
+
+<h2>What the claim gets right</h2>
+<p>Effort matters. Discipline compounds. Plenty of people start with little and finish with a lot. Denying agency is as false as denying context. Hard work is real.</p>
+<p>What the claim usually erases is everything underneath the hustle: roads, courts, language, schools, vaccines, the internet, a currency that works, a childhood that didn’t end at ten, a dozen quiet favors that never make the highlight reel.</p>
+
+<h2>The invisible stack</h2>
+<p>Click a layer. None of these are “handouts.” They’re the floor success stands on.</p>
+<div class="chips" id="layers">
+<button type="button" class="chip on" data-l="infra">Infrastructure</button>
+<button type="button" class="chip" data-l="inst">Institutions</button>
+<button type="button" class="chip" data-l="people">Other people</button>
+<button type="button" class="chip" data-l="luck">Timing &amp; luck</button>
+</div>
+<div class="panel" id="layerOut">Roads, power, clean water, broadband, GPS, shipping lanes — none built by the founder alone. Every product that “ships” rides on someone else’s asphalt and copper.</div>
+
+<h2>Side by side</h2>
+<table>
+<thead><tr><th>Story told</th><th>What usually sits under it</th></tr></thead>
+<tbody>
+<tr><td>Started in a garage</td><td>Garage sat on zoned land, in a country with venture capital and patent law</td></tr>
+<tr><td>No college / self-taught</td><td>Libraries, open source, YouTube, English as a global language, cheap compute</td></tr>
+<tr><td>Bootstrapped, zero help</td><td>Customers, early employees, spouses covering rent, a credit system that works</td></tr>
+<tr><td>Anyone could do this</td><td>Health, neurotype, childhood stability, and random breaks vary wildly</td></tr>
+</tbody>
+</table>
+
+<h2>Not an attack on ambition</h2>
+<p>Seeing the stack doesn’t cancel the climb. It just stops the lie that the mountain was empty. People who admit the ladder still climbed the rungs. People who pretend the ladder was imaginary often pull it up behind them.</p>
+<p class="quote">“You didn’t build that” was a clumsy political slogan. The useful version is quieter: you built something real — on a foundation you didn’t pour alone.</p>
+
+<h2>What to do with this</h2>
+<p>Keep the grit. Drop the myth. Credit the teachers, the partner who kept the lights on, the public systems that made the market possible, and the dumb luck of being born when the tools were cheap. Then build the next thing — and leave the ladder where you found it.</p>
+<p class="muted">None of this says success is fake. It says the “self” in self-made was never flying solo.</p>
+</article>
+<footer>
+<a href="/sacred.html">Library</a> · <a href="https://www.leonlink.net">Leon Link</a> · No Sacred Cows
+</footer>
+<script>
+const layers={
+infra:"Roads, power, clean water, broadband, GPS, shipping lanes — none built by the founder alone. Every product that “ships” rides on someone else’s asphalt and copper.",
+inst:"Courts that enforce contracts, banks that clear payments, schools that taught the workforce to read, regulators that keep the food mostly safe. Boring. Essential.",
+people:"Customers, mentors, early employees, parents, the friend who made an intro. Solo genius is a narrative device; teams and networks are how work actually moves.",
+luck:"Born in a stable decade, in a language with a huge market, healthy enough to grind, lucky enough that the first three failures didn’t end in a hospital bill."
+};
+document.querySelectorAll('#layers .chip').forEach(c=>{
+  c.onclick=()=>{
+    document.querySelectorAll('#layers .chip').forEach(x=>x.classList.remove('on'));
+    c.classList.add('on');
+    document.getElementById('layerOut').textContent=layers[c.dataset.l];
+  };
+});
+</script>
+</body>
+</html>
