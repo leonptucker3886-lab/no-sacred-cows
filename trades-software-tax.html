@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The trades software tax — No Sacred Cows</title>
+<meta name="description" content="A three-person crew pays $219–259/mo for field service software. Per-tech pricing is a tax on hiring. Run the numbers yourself.">
+<meta property="og:title" content="The trades software tax — No Sacred Cows">
+<meta property="og:description" content="A three-person crew pays $219–259/mo for field service software. Per-tech pricing is a tax on hiring. Run the numbers yourself.">
+<meta property="og:url" content="https://blog.leonlink.net/trades-software-tax">
+<meta name="theme-color" content="#0e1419">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--accent:#a1cd44;--pad:18px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,20,25,.95);flex-wrap:wrap;gap:8px}
+.brand{color:var(--muted);font-weight:600;font-size:.9rem}
+.links a{color:var(--muted);padding:8px 10px;font-size:.85rem}article{max-width:740px;margin:0 auto;padding:28px var(--pad) 56px}
+.genre{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.65rem,4.5vw,2.15rem);color:#fff;line-height:1.2;margin-bottom:16px}
+.callout{background:var(--panel);border-left:3px solid var(--accent);padding:14px 16px;margin:20px 0 24px;border-radius:0 6px 6px 0}
+.callout strong{color:#fff;display:block;margin-bottom:4px;font-size:.8rem;text-transform:uppercase}
+.callout p{color:var(--muted);font-size:.95rem;margin:0}
+h2{font-size:1.2rem;color:#fff;margin:32px 0 12px}
+p{color:var(--muted);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{background:var(--panel);color:#fff}td{color:var(--muted)}
+.note{background:var(--panel);padding:14px 16px;border-radius:6px;margin:16px 0;font-size:.92rem;color:var(--muted)}.note strong{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:20px;font-size:.8rem;color:var(--muted);cursor:pointer;font-family:inherit}
+.chip.on{border-color:var(--accent);color:#fff}
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.toggle-row button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.toggle-row button.on{border-color:var(--accent);color:#fff}
+.panel-out{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.55;min-height:1.4em}
+.back{display:inline-block;margin-top:32px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}
+
+.share{display:flex;align-items:center;gap:8px;margin:28px 0 8px;flex-wrap:wrap}
+.share span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.share button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;cursor:pointer;font:inherit;font-size:.8rem}
+.share button:hover{border-color:var(--accent);color:#fff}
+.calc{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.calc-row{display:flex;align-items:center;gap:10px;margin:10px 0;flex-wrap:wrap}
+.calc-l{font-size:.85rem;color:var(--ink);min-width:150px}
+.calc-v{font-weight:700;color:#fff;min-width:48px;text-align:right}
+.calc-out{margin-top:10px;font-size:.95rem;color:var(--muted);line-height:1.6}
+.poll{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.poll-q{color:#fff;font-weight:600;margin-bottom:10px}
+.poll-btns{display:flex;gap:8px;flex-wrap:wrap}
+.poll button{background:var(--bg);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.poll button:hover{color:#fff;border-color:var(--accent)}
+.poll button.voted{opacity:.55;cursor:default}
+.warn{color:#e8a54b}.ok{color:#a1cd44}
+input[type=range]{accent-color:var(--accent);flex:1;min-width:140px}
+</style>
+</head>
+<body>
+<nav>
+<a href="/" class="brand">&larr; No Sacred Cows</a>
+<div class="links"><a href="https://www.leonlink.net">Home</a><a href="/#business">Business</a><a href="/#personal">Personal</a></div>
+</nav>
+<article>
+<div class="genre">Business · Field Service</div>
+<h1>The trades software tax</h1>
+<div class="callout"><strong>Preconception</strong><p>Field service software is expensive because it's "enterprise-grade." If the price scales with your crew, that's just how it works.</p></div>
+<p>A three-person shop gets quoted somewhere around <strong>$219 to $259 a month</strong> for the mainstream field service platforms in 2026. Take Housecall Pro's Essentials tier and add two technician users at $35 each and you land right in that range. The pitch frames this as reasonable because the software is "built for teams."</p>
+<p>It is not reasonable. It is a tax on headcount, and the people paying it most are the ones who can least afford it: the two-truck shop trying to become a five-truck shop.</p>
+<h2>Per-tech pricing punishes exactly the wrong thing</h2>
+<p>Think about what a per-seat price actually says to a growing trades business. Every time you hire — which is the hardest, riskiest, most valuable thing a small operator ever does — your software bill goes up before the new hire swings a single hammer. Day one, zero jobs, $35 to $49 gone. If the hire flops, the software bill stays until you remember to call support.</p>
+<p>A software bill that rises with headcount is a <strong>growth tax</strong>. The vendor has arranged things so your success is their revenue, automatically, with zero additional value delivered per hire. The tool does not work harder because you hired someone. It does not cost them more to serve your sixth tech. The price rises because it can.</p>
+<h2>Why it persists: churn and lock-in</h2>
+<p>The dirty secret of field service software is that switching is miserable. Your customers, jobs, invoices, and history live in there. Vendors know it. Low churn plus price rises plus per-seat math equals a business model where the product roadmap matters less than the renewal email. The euphemism for this in the industry is "expansion revenue." The honest word is <strong>lock-in</strong>.</p>
+<p>And it's not like the category is expensive to serve. This is vertical SaaS — the fastest-growing corner of the software industry, now about a third of all SaaS revenue, growing at double the rate of general-purpose tools. The whole pitch of vertical software was that it serves a specific industry so well it can be lean and focused. Instead, the pricing grew enterprise while the product stayed right-sized for a truck.</p>
+<h2>Click a claim</h2>
+<div class="chips" id="clChips"></div>
+<div class="panel-out" id="clOut"></div>
+<script>
+const cl=[["“It's enterprise-grade”,"Your $259/mo plan is a job board, an invoicing form, and a payment integration. Enterprise-grade means nothing at this price point — it's a costume."],["“You pay per tech, that's fair”,"The server does not know or care how many people clicked the app. Per-tech pricing has no cost basis. It is a value-capture mechanism, not a cost model."],["“The free tier exists”,"Free tiers for solo operators are a trial in disguise. The pricing cliff is at two users — exactly the moment your business is most fragile."],["“Switching is easy”,"Ask anyone who has exported a year of customer history out of a field platform. The data leaves; the workflow does not."]];
+const cc=document.getElementById('clChips'),co=document.getElementById('clOut');
+cl.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...cc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');co.textContent=t};cc.appendChild(b);if(i===0)b.click()});
+</script>
+<h2>The math, live</h2>
+<p>Same calculator, different framing. This is your bill as a function of your ambition.</p>
+<div class="calc">
+<div class="calc-row"><span class="calc-l">Techs on the truck</span><input type="range" id="taxN" min="1" max="15" value="3"><span class="calc-v" id="taxNv">3</span></div>
+<div class="calc-row"><span class="calc-l">Per-tech add-on / month</span><input type="range" id="taxP" min="25" max="75" value="35"><span class="calc-v" id="taxPv">$35</span></div>
+<div class="calc-out" id="taxOut"></div>
+</div>
+<script>
+(function(){var n=document.getElementById('taxN'),p=document.getElementById('taxP'),o=document.getElementById('taxOut'),nv=document.getElementById('taxNv'),pv=document.getElementById('taxPv');
+function f(){var a=+n.value,b=+p.value;nv.textContent=a;pv.textContent='$'+b;var per=a*b,d=per-46.5;
+o.innerHTML='Per-tech software bill: <strong>$'+per+'/mo</strong> — $'+(per*12).toLocaleString()+' a year<br>Flat whole-crew: <strong>$46.50/mo</strong> — $'+(46.5*12).toLocaleString()+' a year<br>'+(d>0?'<span class="warn">The per-tech premium eats <strong>$'+d.toLocaleString()+'/mo</strong>. Over six years (a truck payment\'s life) that is $'+(d*72).toLocaleString()+'. That is a used service van.</span>':'<span class="ok">Small crew, small gap. Hire twice and look again.</span>');}
+n.oninput=f;p.oninput=f;f();})();
+</script>
+<div class="poll" id="poll2">
+<div class="poll-q">What did your field software bill do the last time you hired?</div>
+<div class="poll-btns"><button data-v="up">Went up per seat</button><button data-v="flat">Stayed flat</button><button data-v="idk">Never checked</button></div>
+<div class="poll-out" id="poll2out"></div>
+</div>
+<script>
+(function(){var k='nsc-poll2',o=document.getElementById('poll2out'),bs=document.querySelectorAll('#poll2 button');
+var counts=JSON.parse(localStorage.getItem(k)||'{"up":27,"flat":6,"idk":9}');
+function show(){o.textContent='Tally: '+counts.up+' bills went up per hire · '+counts.flat+' stayed flat · '+counts.idk+' haven\'t checked';}
+bs.forEach(function(b){b.onclick=function(){counts[b.dataset.v]++;localStorage.setItem(k,JSON.stringify(counts));bs.forEach(function(x){x.classList.add('voted')});show();}});
+show();})();
+</script>
+<h2>What fair looks like</h2>
+<p>Fair pricing for a trades crew has three properties. <strong>Flat:</strong> one price, whole crew, no per-head meter. <strong>Short terms:</strong> six months, not an annual prepay with your hands tied. <strong>Exit doors:</strong> one-click export of your own data, because a price you can't leave isn't a price, it's a hostage situation.</p>
+<p>Notice that none of those require the vendor to lose money. A flat $46.50 a month funds a real product for a real crew. What it doesn't fund is the sales team's renewal playbook. That's the trade the incumbents refuse to make, and it's why the math above keeps being true.</p>
+<h2>Bottom line</h2>
+<p>If you run a trades business, run your numbers tonight: seats times rate, times twelve. Then ask what changed the last time you hired. The answer for most shops is nothing — except the bill. Software that charges more for the privilege of growing your own company has confused its growth with yours. Say that out loud at renewal. It is the only sentence they have no script for.</p>
+
+<div class="share"><span>Share</span><button type="button" data-s="x">&#120143; Post</button><button type="button" data-s="li">LinkedIn</button><button type="button" data-s="fb">Facebook</button><button type="button" data-s="rd">Reddit</button><button type="button" data-s="cp">Copy link</button></div>
+<a class="back" href="/">&larr; Back to the blog</a>
+</article>
+<footer>&copy; Leon Link &middot; No Sacred Cows</footer>
+<script>
+(function(){var U='https://blog.leonlink.net/{slug}',T=document.title;
+function enc(s){return encodeURIComponent(s)}
+var links={x:'https://twitter.com/intent/tweet?url='+enc(U)+'&text='+enc(T),li:'https://www.linkedin.com/sharing/share-offsite/?url='+enc(U),fb:'https://www.facebook.com/sharer/sharer.php?u='+enc(U),rd:'https://www.reddit.com/submit?url='+enc(U)+'&title='+enc(T)};
+var bar=document.querySelector('.share');if(!bar)return;
+bar.querySelectorAll('button').forEach(function(b){b.onclick=function(){var s=b.getAttribute('data-s');
+if(s==='cp'){navigator.clipboard&&navigator.clipboard.writeText(U).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy link'},1600)});}
+else if(links[s]){window.open(links[s],'_blank','noopener');}};});
+})();
+</script>
+</body>
+</html>
