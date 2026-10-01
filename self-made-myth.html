@@ -29,11 +29,31 @@ th,td{border:1px solid var(--line);padding:10px;text-align:left}
 th{background:var(--panel);color:#fff;font-size:.75rem;text-transform:uppercase}
 .quote{border-left:3px solid var(--line);padding-left:14px;color:var(--muted);font-style:italic;margin:18px 0}
 footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.85rem}
+
+.share{display:flex;align-items:center;gap:8px;margin:28px 0 8px;flex-wrap:wrap}
+.share span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.share button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;cursor:pointer;font:inherit;font-size:.8rem}
+.share button:hover{border-color:var(--accent);color:#fff}
+.calc{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.calc-row{display:flex;align-items:center;gap:10px;margin:10px 0;flex-wrap:wrap}
+.calc-l{font-size:.85rem;color:var(--ink);min-width:150px}
+.calc-v{font-weight:700;color:#fff;min-width:48px;text-align:right}
+.calc-out{margin-top:10px;font-size:.95rem;color:var(--muted);line-height:1.6}
+.poll{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.poll-q{color:#fff;font-weight:600;margin-bottom:10px}
+.poll-btns{display:flex;gap:8px;flex-wrap:wrap}
+.poll button{background:var(--bg);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.poll button:hover{color:#fff;border-color:var(--accent)}
+.poll button.voted{opacity:.55;cursor:default}
+.warn{color:#e8a54b}.ok{color:#a1cd44}
+input[type=range]{accent-color:var(--accent);flex:1;min-width:140px}
 </style>
+<meta property="og:title" content="The Self-Made Myth — No Sacred Cows">
+<meta property="og:url" content="https://blog.leonlink.net/self-made-myth">
 </head>
 <body>
 <nav>
-<a class="brand" href="/sacred.html">← No Sacred Cows</a>
+<a class="brand" href="/">← No Sacred Cows</a>
 <a href="https://www.leonlink.net">Leon Link</a>
 </nav>
 <article>
@@ -76,7 +96,7 @@ footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:cente
 <p class="muted">None of this says success is fake. It says the “self” in self-made was never flying solo.</p>
 </article>
 <footer>
-<a href="/sacred.html">Library</a> · <a href="https://www.leonlink.net">Leon Link</a> · No Sacred Cows
+<a href="/">Blog</a> · <a href="https://www.leonlink.net">Leon Link</a> · No Sacred Cows
 </footer>
 <script>
 const layers={
@@ -92,6 +112,16 @@ document.querySelectorAll('#layers .chip').forEach(c=>{
     document.getElementById('layerOut').textContent=layers[c.dataset.l];
   };
 });
+</script>
+<script>
+(function(){var U='https://blog.leonlink.net/self-made-myth',T=document.title;
+function enc(s){return encodeURIComponent(s)}
+var links={x:'https://twitter.com/intent/tweet?url='+enc(U)+'&text='+enc(T),li:'https://www.linkedin.com/sharing/share-offsite/?url='+enc(U),fb:'https://www.facebook.com/sharer/sharer.php?u='+enc(U),rd:'https://www.reddit.com/submit?url='+enc(U)+'&title='+enc(T)};
+var bar=document.querySelector('.share');if(!bar)return;
+bar.querySelectorAll('button').forEach(function(b){b.onclick=function(){var s=b.getAttribute('data-s');
+if(s==='cp'){navigator.clipboard&&navigator.clipboard.writeText(U).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy link'},1600)});}
+else if(links[s]){window.open(links[s],'_blank','noopener');}};});
+})();
 </script>
 </body>
 </html>
