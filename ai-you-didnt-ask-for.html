@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You&#x27;re paying for AI you didn&#x27;t ask for — No Sacred Cows</title>
+<meta name="description" content="Forced AI bundling drove the median SaaS renewal up 8% in 2026. How to tell real AI features from slop — and the one question to ask at renewal.">
+<meta property="og:title" content="You&#x27;re paying for AI you didn&#x27;t ask for — No Sacred Cows">
+<meta property="og:description" content="Forced AI bundling drove the median SaaS renewal up 8% in 2026. How to tell real AI features from slop — and the one question to ask at renewal.">
+<meta property="og:url" content="https://blog.leonlink.net/ai-you-didnt-ask-for">
+<meta name="theme-color" content="#0e1419">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--accent:#66c0f4;--pad:18px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,20,25,.95);flex-wrap:wrap;gap:8px}
+.brand{color:var(--muted);font-weight:600;font-size:.9rem}
+.links a{color:var(--muted);padding:8px 10px;font-size:.85rem}article{max-width:740px;margin:0 auto;padding:28px var(--pad) 56px}
+.genre{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.65rem,4.5vw,2.15rem);color:#fff;line-height:1.2;margin-bottom:16px}
+.callout{background:var(--panel);border-left:3px solid var(--accent);padding:14px 16px;margin:20px 0 24px;border-radius:0 6px 6px 0}
+.callout strong{color:#fff;display:block;margin-bottom:4px;font-size:.8rem;text-transform:uppercase}
+.callout p{color:var(--muted);font-size:.95rem;margin:0}
+h2{font-size:1.2rem;color:#fff;margin:32px 0 12px}
+p{color:var(--muted);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{background:var(--panel);color:#fff}td{color:var(--muted)}
+.note{background:var(--panel);padding:14px 16px;border-radius:6px;margin:16px 0;font-size:.92rem;color:var(--muted)}.note strong{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:20px;font-size:.8rem;color:var(--muted);cursor:pointer;font-family:inherit}
+.chip.on{border-color:var(--accent);color:#fff}
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.toggle-row button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.toggle-row button.on{border-color:var(--accent);color:#fff}
+.panel-out{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.55;min-height:1.4em}
+.back{display:inline-block;margin-top:32px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}
+
+.share{display:flex;align-items:center;gap:8px;margin:28px 0 8px;flex-wrap:wrap}
+.share span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.share button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;cursor:pointer;font:inherit;font-size:.8rem}
+.share button:hover{border-color:var(--accent);color:#fff}
+.calc{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.calc-row{display:flex;align-items:center;gap:10px;margin:10px 0;flex-wrap:wrap}
+.calc-l{font-size:.85rem;color:var(--ink);min-width:150px}
+.calc-v{font-weight:700;color:#fff;min-width:48px;text-align:right}
+.calc-out{margin-top:10px;font-size:.95rem;color:var(--muted);line-height:1.6}
+.poll{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.poll-q{color:#fff;font-weight:600;margin-bottom:10px}
+.poll-btns{display:flex;gap:8px;flex-wrap:wrap}
+.poll button{background:var(--bg);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.poll button:hover{color:#fff;border-color:var(--accent)}
+.poll button.voted{opacity:.55;cursor:default}
+.warn{color:#e8a54b}.ok{color:#a1cd44}
+input[type=range]{accent-color:var(--accent);flex:1;min-width:140px}
+</style>
+</head>
+<body>
+<nav>
+<a href="/" class="brand">&larr; No Sacred Cows</a>
+<div class="links"><a href="https://www.leonlink.net">Home</a><a href="/#business">Business</a><a href="/#personal">Personal</a></div>
+</nav>
+<article>
+<div class="genre">Business · Software</div>
+<h1>You're paying for AI you didn't ask for</h1>
+<div class="callout"><strong>Preconception</strong><p>When software gets more expensive, it's because AI is genuinely expensive to build and run. The vendor is passing along real costs.</p></div>
+<p>Some of it is real cost, sure. Most of it is a story. And the story is getting less convincing every quarter, because the numbers keep leaking out.</p>
+<p>Here's the pattern: your software works. It has worked for years. Then at renewal, the price goes up — and in 2026 the reason on the invoice is always the same word. <em>AI.</em> Not "improved reliability," not "more integrations." AI. Zylo's 2026 SaaS Management Index found seventy-nine percent of IT leaders faced a price increase at renewal over the past year, median bump about eight percent, and the top named driver was AI feature bundling. Not inflation. Not compute. <strong>Bundling.</strong></p>
+<h2>The forced upgrade</h2>
+<p>The aggressive version is what the big vendors did: make the AI SKU mandatory. You want to keep the functionality you already had? Congratulations, that functionality now lives in a more expensive tier with an AI copilot attached. You did not ask for the copilot. You may not want the copilot. It does not matter. The old tier is "legacy" now, and legacy is a synonym for <em>expiring</em>.</p>
+<p>This is not a cost story. It is an upsell with a neural accent. Compute costs have been falling for years — model inference gets cheaper by the month, and every serious buyer knows it. What got expensive was the vendor's growth expectations, and that bill got forwarded to you with a sparkle emoji on it.</p>
+<h2>AI slop is a feature category now</h2>
+<p>Worse than the price is what the price buys. There is a new genre of feature that exists to be mentioned in the renewal email rather than used: the AI summary nobody reads, the chatbot that answers questions your help docs already answered, the "AI-powered insights" that restate the number three inches above it. It demos beautifully. It changes nothing. I call it slop, and the industry has started using the word too, which is how you know it landed.</p>
+<div class="chips" id="slChips"></div>
+<div class="panel-out" id="slOut"></div>
+<script>
+const sl=[["“AI-powered insights”","Ask: insights into what? If the feature restates a number you already had, it is a summarizer wearing a lab coat."],["Chat assistant on the docs","Fine, sometimes. But if the docs were good, the bot is a middleman. If the docs were bad, the bot is hallucinating confidently on top of them."],["“AI-driven automation”","Does it complete a whole task, or does it draft something a human reviews anyway? First one is a feature. Second is a text box."],["Copilot for X","X is usually a screen you already understood. Copilots that reduce clicks are real. Copilots that add a chat panel to a form are branding."],["AI summary of your data","The test: would you have written the summary yourself? If yes, you just paid to skip two minutes of reading."]];
+const sc=document.getElementById('slChips'),so=document.getElementById('slOut');
+sl.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...sc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');so.textContent=t};sc.appendChild(b);if(i===0)b.click()});
+</script>
+<p>To be clear about where the line is: AI features that complete real work end to end — draft the full report, route the job, answer the phone — are genuinely valuable and I will not pretend otherwise. The test is simple. <strong>Does it finish something, or does it decorate something?</strong> Decoration is what you're being billed for.</p>
+<h2>Subscription fatigue is not a vibe, it's a ledger</h2>
+<p>There's a broader weariness underneath all of this, and vendors love to dismiss it as mood. It isn't. It is arithmetic. The average small business is now running dozens of subscriptions, each one small enough to survive a glance at the card statement, each one raised annually by the same median eight percent. A thermostat subscription. A payroll platform fee. A "premium" tier on a calendar app. Individually, all reasonable. Together, a second rent.</p>
+<div class="poll" id="poll1">
+<div class="poll-q">Has software you already owned gotten more expensive this year without you getting anything you wanted?</div>
+<div class="poll-btns"><button data-v="yes">Yes — price up, nothing new</button><button data-v="up">Yes — and the "new" was AI slop</button><button data-v="no">No, mine held steady</button></div>
+<div class="poll-out" id="poll1out"></div>
+</div>
+<script>
+(function(){var k='nsc-poll1',o=document.getElementById('poll1out'),bs=document.querySelectorAll('#poll1 button');
+var counts=JSON.parse(localStorage.getItem(k)||'{"yes":12,"up":31,"no":4}');
+function show(){o.textContent='Running tally (this device + seed): '+counts.yes+' paid more for nothing · '+counts.up+' paid more for slop · '+counts.no+' held steady';}
+bs.forEach(function(b){b.onclick=function(){var v=b.dataset.v;counts[v]++;localStorage.setItem(k,JSON.stringify(counts));bs.forEach(function(x){x.classList.add('voted')});show();}});
+show();})();
+</script>
+<h2>What an honest AI price looks like</h2>
+<p>Vendors who deserve your money are doing something specific: they price the AI by the work it does, not by a percentage smothered on top of your old bill. A flat fee that includes the crew. Usage charges only where usage is real, like per completed job or per processed document. A downgrade path that actually exists. And crucially — <strong>the ability to say no to the AI and keep your price.</strong> If the answer to "can I opt out" is no, the AI was never a feature. It was a Trojan horse for the increase.</p>
+<div class="note"><strong>At your next renewal, ask one question.</strong> "What does this cost without the AI?" Watch what happens. If the discount is trivial or the option doesn't exist, you just learned what the product was actually worth to them — and it wasn't the value of the AI. It was the fact that you hadn't left yet.</div>
+<h2>Bottom line</h2>
+<p>You are not paying for intelligence. You are paying for a growth story the vendor can tell its investors, stapled to the product you already needed. Some AI features are worth real money — the ones that finish work. The rest is slop with a pricing department behind it. Ask what it costs without. Ask at every renewal. And when the answer is "you can't remove it," start shopping, because that vendor has stopped selling you software and started selling you the privilege of not leaving.</p>
+
+<div class="share"><span>Share</span><button type="button" data-s="x">&#120143; Post</button><button type="button" data-s="li">LinkedIn</button><button type="button" data-s="fb">Facebook</button><button type="button" data-s="rd">Reddit</button><button type="button" data-s="cp">Copy link</button></div>
+<a class="back" href="/">&larr; Back to the blog</a>
+</article>
+<footer>&copy; Leon Link &middot; No Sacred Cows</footer>
+<script>
+(function(){var U='https://blog.leonlink.net/{slug}',T=document.title;
+function enc(s){return encodeURIComponent(s)}
+var links={x:'https://twitter.com/intent/tweet?url='+enc(U)+'&text='+enc(T),li:'https://www.linkedin.com/sharing/share-offsite/?url='+enc(U),fb:'https://www.facebook.com/sharer/sharer.php?u='+enc(U),rd:'https://www.reddit.com/submit?url='+enc(U)+'&title='+enc(T)};
+var bar=document.querySelector('.share');if(!bar)return;
+bar.querySelectorAll('button').forEach(function(b){b.onclick=function(){var s=b.getAttribute('data-s');
+if(s==='cp'){navigator.clipboard&&navigator.clipboard.writeText(U).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy link'},1600)});}
+else if(links[s]){window.open(links[s],'_blank','noopener');}};});
+})();
+</script>
+</body>
+</html>
