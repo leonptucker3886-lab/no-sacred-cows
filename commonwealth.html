@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commonwealth vs State — No Sacred Cows</title>
+<meta name="theme-color" content="#0e1419">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--accent:#e8a54b;--pad:18px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,20,25,.95);flex-wrap:wrap;gap:8px}
+.brand{color:var(--muted);font-weight:600;font-size:.9rem}
+.links a{color:var(--muted);padding:8px 10px;font-size:.85rem}article{max-width:740px;margin:0 auto;padding:28px var(--pad) 56px}
+.genre{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.65rem,4.5vw,2.15rem);color:#fff;line-height:1.2;margin-bottom:16px}
+.callout{background:var(--panel);border-left:3px solid var(--accent);padding:14px 16px;margin:20px 0 24px;border-radius:0 6px 6px 0}
+.callout strong{color:#fff;display:block;margin-bottom:4px;font-size:.8rem;text-transform:uppercase}
+.callout p{color:var(--muted);font-size:.95rem;margin:0}
+h2{font-size:1.2rem;color:#fff;margin:32px 0 12px}
+p{color:var(--muted);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{background:var(--panel);color:#fff}td{color:var(--muted)}
+.note{background:var(--panel);padding:14px 16px;border-radius:6px;margin:16px 0;font-size:.92rem;color:var(--muted)}.note strong{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:20px;font-size:.8rem;color:var(--muted);cursor:pointer}
+.chip.on{border-color:var(--accent);color:#fff}
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.toggle-row button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.toggle-row button.on{border-color:var(--accent);color:#fff}
+.panel-out{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.55;min-height:1.4em}
+.back{display:inline-block;margin-top:32px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav>
+<a href="/sacred.html" class="brand">← No Sacred Cows</a>
+<div class="links"><a href="https://www.leonlink.net">Home</a><a href="https://www.leonlink.net">Apps</a><a href="https://www.leonlink.net">Games</a></div>
+</nav>
+<article>
+<div class="genre">Law</div>
+<h1>Commonwealth vs State</h1>
+<div class="callout"><strong>Preconception</strong><p>A commonwealth functions differently than a state when it comes to courts, punishment, and laws.</p></div>
+<p>Four U.S. jurisdictions call themselves commonwealths: Virginia, Massachusetts, Pennsylvania, and Kentucky. For courts, crime, punishment, and lawmaking, a commonwealth is a state with a <strong>leftover name</strong>.</p>
+<h2>Where the word comes from</h2>
+<p>In early modern English, <em>commonwealth</em> meant the public good. When these states adopted constitutions, some chose "Commonwealth" in the formal title. That was rhetorical and historical — not a parallel legal system.</p>
+<h2>Same machinery — explore</h2>
+<div class="chips" id="machChips"></div>
+<div class="panel-out" id="machOut"></div>
+<script>
+const mach=[["Courts","Trial and appellate courts exist in all four. Names differ — the function does not."],["Prosecutors","Often titled Commonwealth's attorney. Same job as a state's attorney: charge crimes under state code."],["Criminal codes","Statutes define offenses and penalties. No alternate commonwealth criminal physics."],["Police power","Health, zoning, traffic, crime — ordinary state police power."],["Constitution","Bill of Rights and due process: same baseline. Federal courts can still review."],["Prisons","Incarceration, fines, probation — same toolkit as other states."]];
+const mc=document.getElementById('machChips'),mo=document.getElementById('machOut');
+mach.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...mc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');mo.textContent=t};mc.appendChild(b);if(i===0)b.click()});
+</script>
+<table>
+<tr><th>Function</th><th>Typical state</th><th>Commonwealth</th></tr>
+<tr><td>Trial courts</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Prosecutors</td><td>State's attorney</td><td>Commonwealth's attorney (title)</td></tr>
+<tr><td>Statutes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Police power</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>U.S. Constitution</td><td>Binds</td><td>Binds</td></tr>
+</table>
+<h2>Click a commonwealth</h2>
+<div class="toggle-row" id="toggles"></div>
+<div class="panel-out" id="toggleOut"></div>
+<script>
+const items=[["Virginia","Circuit and General District courts, Court of Appeals, Supreme Court. Code of Virginia. No special constitutional exemption."],["Massachusetts","Superior and District courts, Appeals Court, SJC. Massachusetts General Laws. Same Bill of Rights baseline."],["Pennsylvania","Courts of Common Pleas, Superior Court, Supreme Court. Crimes Code. Caption says Commonwealth — power is still state power."],["Kentucky","Circuit and District courts, Court of Appeals, Supreme Court. KRS. Entered as a state; the label did not invent a second system."]];
+const row=document.getElementById('toggles'),out=document.getElementById('toggleOut');
+items.forEach(([n,t],i)=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>{[...row.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');out.textContent=t};row.appendChild(b);if(i===0)b.click()});
+</script>
+<h2>Myth vs fact</h2>
+<div class="chips" id="mythChips"></div>
+<div class="panel-out" id="mythOut"></div>
+<script>
+const myths=[["Different police power?","Myth. Ordinary state police power — health, safety, zoning, crime."],["Courts work differently?","Procedure varies among all states. That is federalism, not a commonwealth privilege."],["Like a territory?","No. These four are states of the Union. Puerto Rico is a different debate."],["Softer punishment?","No. Prisons, fines, probation — same toolkit. Policy differs by legislature, not by the seal."]];
+const myc=document.getElementById('mythChips'),myo=document.getElementById('mythOut');
+myths.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...myc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');myo.textContent=t};myc.appendChild(b);if(i===0)b.click()});
+</script>
+<div class="note"><strong>Puerto Rico is the confusion magnet.</strong> Its status debates are real. Virginia is not Puerto Rico. Collapsing them turns a brand name into a theory of sovereignty those states do not claim.</div>
+<h2>Bottom line</h2>
+<p>Commonwealth is a historical label. It does not create different courts, different punishment physics, or an escape from law. Branding is not architecture. The architecture is the ordinary American state.</p>
+<a class="back" href="/sacred.html">← Back to library</a>
+</article>
+<footer>© Leon Link · No Sacred Cows</footer>
+</body>
+</html>
