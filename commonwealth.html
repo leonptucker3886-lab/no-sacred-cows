@@ -32,12 +32,32 @@ th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{backgrou
 .panel-out{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.55;min-height:1.4em}
 .back{display:inline-block;margin-top:32px;font-weight:600}
 footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}
+
+.share{display:flex;align-items:center;gap:8px;margin:28px 0 8px;flex-wrap:wrap}
+.share span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.share button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;cursor:pointer;font:inherit;font-size:.8rem}
+.share button:hover{border-color:var(--accent);color:#fff}
+.calc{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.calc-row{display:flex;align-items:center;gap:10px;margin:10px 0;flex-wrap:wrap}
+.calc-l{font-size:.85rem;color:var(--ink);min-width:150px}
+.calc-v{font-weight:700;color:#fff;min-width:48px;text-align:right}
+.calc-out{margin-top:10px;font-size:.95rem;color:var(--muted);line-height:1.6}
+.poll{background:var(--panel);padding:16px;border-radius:6px;margin:16px 0}
+.poll-q{color:#fff;font-weight:600;margin-bottom:10px}
+.poll-btns{display:flex;gap:8px;flex-wrap:wrap}
+.poll button{background:var(--bg);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.poll button:hover{color:#fff;border-color:var(--accent)}
+.poll button.voted{opacity:.55;cursor:default}
+.warn{color:#e8a54b}.ok{color:#a1cd44}
+input[type=range]{accent-color:var(--accent);flex:1;min-width:140px}
 </style>
+<meta property="og:title" content="Commonwealth vs State — No Sacred Cows">
+<meta property="og:url" content="https://blog.leonlink.net/commonwealth">
 </head>
 <body>
 <nav>
-<a href="/sacred.html" class="brand">← No Sacred Cows</a>
-<div class="links"><a href="https://www.leonlink.net">Home</a><a href="https://www.leonlink.net">Apps</a><a href="https://www.leonlink.net">Games</a></div>
+<a href="/" class="brand">← No Sacred Cows</a>
+<div class="links"><a href="https://www.leonlink.net">Home</a><a href="/#business">Business</a><a href="/#personal">Personal</a></div>
 </nav>
 <article>
 <div class="genre">Law</div>
@@ -81,8 +101,19 @@ myths.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='
 <div class="note"><strong>Puerto Rico is the confusion magnet.</strong> Its status debates are real. Virginia is not Puerto Rico. Collapsing them turns a brand name into a theory of sovereignty those states do not claim.</div>
 <h2>Bottom line</h2>
 <p>Commonwealth is a historical label. It does not create different courts, different punishment physics, or an escape from law. Branding is not architecture. The architecture is the ordinary American state.</p>
-<a class="back" href="/sacred.html">← Back to library</a>
+<div class="share"><span>Share</span><button type="button" data-s="x">&#120143; Post</button><button type="button" data-s="li">LinkedIn</button><button type="button" data-s="fb">Facebook</button><button type="button" data-s="rd">Reddit</button><button type="button" data-s="cp">Copy link</button></div>
+<a class="back" href="/">&larr; Back to the blog</a>
 </article>
 <footer>© Leon Link · No Sacred Cows</footer>
+<script>
+(function(){var U='https://blog.leonlink.net/commonwealth',T=document.title;
+function enc(s){return encodeURIComponent(s)}
+var links={x:'https://twitter.com/intent/tweet?url='+enc(U)+'&text='+enc(T),li:'https://www.linkedin.com/sharing/share-offsite/?url='+enc(U),fb:'https://www.facebook.com/sharer/sharer.php?u='+enc(U),rd:'https://www.reddit.com/submit?url='+enc(U)+'&title='+enc(T)};
+var bar=document.querySelector('.share');if(!bar)return;
+bar.querySelectorAll('button').forEach(function(b){b.onclick=function(){var s=b.getAttribute('data-s');
+if(s==='cp'){navigator.clipboard&&navigator.clipboard.writeText(U).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy link'},1600)});}
+else if(links[s]){window.open(links[s],'_blank','noopener');}};});
+})();
+</script>
 </body>
 </html>
