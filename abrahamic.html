@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abrahamic Religions — No Sacred Cows</title>
+<meta name="theme-color" content="#0e1419">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1419;--panel:#1b2838;--line:#2a475e;--ink:#c7d5e0;--muted:#8f98a0;--accent:#e8a54b;--pad:18px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,20,25,.95);flex-wrap:wrap;gap:8px}
+.brand{color:var(--muted);font-weight:600;font-size:.9rem}
+.links a{color:var(--muted);padding:8px 10px;font-size:.85rem}article{max-width:740px;margin:0 auto;padding:28px var(--pad) 56px}
+.genre{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.65rem,4.5vw,2.15rem);color:#fff;line-height:1.2;margin-bottom:16px}
+.callout{background:var(--panel);border-left:3px solid var(--accent);padding:14px 16px;margin:20px 0 24px;border-radius:0 6px 6px 0}
+.callout strong{color:#fff;display:block;margin-bottom:4px;font-size:.8rem;text-transform:uppercase}
+.callout p{color:var(--muted);font-size:.95rem;margin:0}
+h2{font-size:1.2rem;color:#fff;margin:32px 0 12px}
+p{color:var(--muted);margin-bottom:14px}
+ul{margin:0 0 16px 1.25em;color:var(--muted)}li{margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}th{background:var(--panel);color:#fff}td{color:var(--muted)}
+.note{background:var(--panel);padding:14px 16px;border-radius:6px;margin:16px 0;font-size:.92rem;color:var(--muted)}.note strong{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:20px;font-size:.8rem;color:var(--muted);cursor:pointer}
+.chip.on{border-color:var(--accent);color:#fff}
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.toggle-row button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit;font-size:.85rem}
+.toggle-row button.on{border-color:var(--accent);color:#fff}
+.panel-out{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.55;min-height:1.4em}
+.back{display:inline-block;margin-top:32px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:20px var(--pad);text-align:center;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav>
+<a href="/sacred.html" class="brand">← No Sacred Cows</a>
+<div class="links"><a href="https://www.leonlink.net">Home</a><a href="https://www.leonlink.net">Apps</a><a href="https://www.leonlink.net">Games</a></div>
+</nav>
+<article>
+<div class="genre">Comparison</div>
+<h1>Abrahamic Religions</h1>
+<div class="callout"><strong>Preconception</strong><p>The three Abrahamic faiths are fundamentally separate worlds with little in common.</p></div>
+<p>This is not a contest. It is a closer look at how much Judaism, Christianity, and Islam share — and where the loud fights sit on top of a common frame.</p>
+<h2>One God, one moral sky</h2>
+<p>All three are uncompromising monotheisms. That is the load-bearing wall. Inside the family, arguments are about how the One is known — not whether the One exists.</p>
+<div class="chips" id="themeChips"></div>
+<div class="panel-out" id="themeOut"></div>
+<script>
+const themes=[["God","Judaism: one, indivisible. Christianity: one; Trinity as inner life of the One. Islam: one (tawhid), absolute."],["Abraham","Patriarch, test of faith, ancestor of peoples. Covenant narratives run through all three."],["Scripture","Revelation as real address into history. Canons differ; the idea does not."],["Prophets","Moses and the Hebrew line; Jesus in Christian and Islamic telling; Muhammad as seal in Islam."],["Judgment","Life is accountable. Resurrection or final assessment appears across the family."]];
+const tc=document.getElementById('themeChips'),to=document.getElementById('themeOut');
+themes.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...tc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');to.textContent=t};tc.appendChild(b);if(i===0)b.click()});
+</script>
+<table>
+<tr><th>Theme</th><th>Judaism</th><th>Christianity</th><th>Islam</th></tr>
+<tr><td>God</td><td>One</td><td>One (Trinity)</td><td>One (tawhid)</td></tr>
+<tr><td>Abraham</td><td>Covenant patriarch</td><td>Father of faith</td><td>Prophet</td></tr>
+<tr><td>Scripture</td><td>Tanakh</td><td>Bible</td><td>Qur'an</td></tr>
+<tr><td>Jesus</td><td>Not the messiah</td><td>Messiah / Son</td><td>Prophet (Isa)</td></tr>
+<tr><td>Law</td><td>Halakha</td><td>Gospel / tradition</td><td>Sharia</td></tr>
+</table>
+<h2>Messiah, Jesus, Isa — the hinge</h2>
+<div class="toggle-row" id="jesusTog"></div>
+<div class="panel-out" id="jesusOut"></div>
+<script>
+const jesus=[["Judaism","Messiah means anointed agent of God. Jesus is not accepted in that role. The category remains; the candidate does not."],["Christianity","Jesus is the Messiah (Christ): incarnation, cross, resurrection as the center of salvation."],["Islam","Jesus (Isa) is a major prophet: born of Mary, Gospel, signs. Not divine. Still inside the prophetic line ending with Muhammad."]];
+const jt=document.getElementById('jesusTog'),jo=document.getElementById('jesusOut');
+jesus.forEach(([n,t],i)=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>{[...jt.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');jo.textContent=t};jt.appendChild(b);if(i===0)b.click()});
+</script>
+<div class="note"><strong>Shared Jesus file:</strong> Mary's son, sent by God, teacher and sign-worker, honored. The split is identity and climax — not whether he belongs in revelation's story.</div>
+<h2>Practice patterns</h2>
+<div class="chips" id="simChips"></div>
+<div class="panel-out" id="simOut"></div>
+<script>
+const sims=[["Prayer","Structured address to God — forms differ, disciplined loyalty is shared."],["Fasting","Ramadan, Yom Kippur, Lenten practice — body enlisted in devotion."],["Charity","Zakat, tzedakah, almsgiving — wealth under moral claim."],["Pilgrimage","Hajj, Jerusalem, local shrines — geography made sacred by memory."]];
+const sc=document.getElementById('simChips'),so=document.getElementById('simOut');
+sims.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.onclick=()=>{[...sc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');so.textContent=t};sc.appendChild(b);if(i===0)b.click()});
+</script>
+<p>Islamic tradition names Jews and Christians People of the Book. Christianity cannot tell its story without Israel. Family fights are fierce because the inheritance is shared.</p>
+<h2>Bottom line</h2>
+<p>These disputes are family disputes. Messiah and Jesus are the sharpest edge: same story-world, incompatible verdicts. Comparison does not require a winner — only clear eyes.</p>
+<a class="back" href="/sacred.html">← Back to library</a>
+</article>
+<footer>© Leon Link · No Sacred Cows</footer>
+</body>
+</html>
