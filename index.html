@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>No Sacred Cows — Leon Link</title>
+<meta name="description" content="No Sacred Cows — essays and opinions from Leon Link. Business: software, pricing, marketing. Personal: law, culture, origins. No dogma.">
+<meta property="og:title" content="No Sacred Cows — Leon Link">
+<meta property="og:description" content="Essays and opinions. Business: software, pricing, marketing. Personal: law, culture, origins. No dogma.">
 <meta name="theme-color" content="#0e1419">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
@@ -28,7 +31,8 @@ nav{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:max(1
 .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
 .stats{display:flex;gap:14px;flex-wrap:wrap}.stat{display:flex;flex-direction:column}.stat strong{color:#fff}.stat span{font-size:.7rem;color:var(--faint);text-transform:uppercase}
 main{max-width:960px;margin:0 auto;padding:8px var(--pad) 40px}
-h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sec{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sec-sub{font-size:.8rem;color:var(--faint);margin:6px 0 14px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .card{background:var(--panel);border-radius:6px;overflow:hidden;border:1px solid transparent;display:block;color:inherit}
 .card:hover{border-color:var(--accent);color:inherit}
@@ -57,9 +61,8 @@ document.addEventListener('DOMContentLoaded',function(){var b=document.getElemen
 <div class="nav-top">
 <a href="https://www.leonlink.net" class="brand"><svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a9fff"/><stop offset="1" stop-color="#66c0f4"/></linearGradient></defs><rect width="32" height="32" rx="7" fill="url(#g1)"/><path d="M10 16h12M14 12l-4 4 4 4M18 12l4 4-4 4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Leon Link</span></a>
 <div class="links">
-<a href="https://www.leonlink.net">Apps</a>
-<a href="https://www.leonlink.net">Games</a>
-<a href="/sacred.html" class="active">Sacred Cows</a>
+<a href="#business">Business</a>
+<a href="#personal">Personal</a>
 <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">&#9728;</button>
 </div>
 </div>
@@ -73,18 +76,31 @@ document.addEventListener('DOMContentLoaded',function(){var b=document.getElemen
 <div class="meta">
 <h1>No Sacred Cows</h1>
 <p class="st"><span class="dot"></span>Active · Let's slay some cows</p>
-<div class="stats"><div class="stat"><strong>4</strong><span>Articles</span></div><div class="stat"><strong>Open</strong><span>Inquiry</span></div><div class="stat"><strong>No dogma</strong><span>Rule</span></div></div>
+<div class="stats"><div class="stat"><strong>10</strong><span>Articles</span></div><div class="stat"><strong>Open</strong><span>Inquiry</span></div><div class="stat"><strong>No dogma</strong><span>Rule</span></div></div>
 </div>
 </div>
 <main>
-<h2>Library</h2>
-<div class="grid" id="lib"></div>
-<script>
-const articles=[{name:"The Long Way Home",genre:"Origins",blurb:"Preconception: we were created as humans.",url:"/long-way-home.html",g:"linear-gradient(135deg,#0c2040,#050a14)"},{name:"Commonwealth vs State",genre:"Law",blurb:"Preconception: commonwealth runs courts differently than a state.",url:"/commonwealth.html",g:"linear-gradient(135deg,#1a2a3a,#0c1520)"},{name:"Abrahamic Religions",genre:"Comparison",blurb:"Judaism, Christianity, Islam — shared roots, no winner.",url:"/abrahamic.html",g:"linear-gradient(135deg,#1a3040,#0c1520)"},{name:"The Self-Made Myth",genre:"Culture",blurb:"Preconception: successful people made it alone — no help, no luck, no systems.",url:"/self-made-myth.html",g:"linear-gradient(135deg,#2a1a30,#120c18)"}];
-const lib=document.getElementById('lib');
-articles.forEach(g=>{const a=document.createElement('a');a.className='card';a.href=g.url;a.innerHTML=`<div class="cover" style="background:${g.g}"><span>${g.name}</span></div><div class="card-meta"><div class="genre">${g.genre}</div><div class="blurb">${g.blurb}</div></div>`;lib.appendChild(a)});
-</script>
+<div class="sec" id="business">Business</div>
+<p class="sec-sub">Software, pricing, marketing — opinions with numbers behind them.</p>
+<div class="grid">
+<a class="card" href="/trades-software-tax.html"><div class="cover" style="background:linear-gradient(135deg,#0c3020,#05140c)"><span>The trades software tax</span></div><div class="card-meta"><div class="genre">Business · Field service</div><div class="blurb">Preconception: field software is expensive because it's enterprise-grade. It's a tax on hiring.</div></div></a>
+<a class="card" href="/per-seat-pricing.html"><div class="cover" style="background:linear-gradient(135deg,#40290c,#140b05)"><span>Per-seat pricing is dying</span></div><div class="card-meta"><div class="genre">Business · Pricing</div><div class="blurb">Preconception: you pay for software per person, per month. Always have. The model is collapsing in real time.</div></div></a>
+<a class="card" href="/ai-you-didnt-ask-for.html"><div class="cover" style="background:linear-gradient(135deg,#0c2040,#050a14)"><span>You're paying for AI you didn't ask for</span></div><div class="card-meta"><div class="genre">Business · Software</div><div class="blurb">Preconception: price increases are because AI is expensive. Most of it is bundling with a neural accent.</div></div></a>
+<a class="card" href="/seo-is-dead.html"><div class="cover" style="background:linear-gradient(135deg,#301c40,#140a18)"><span>SEO died and nobody held a funeral</span></div><div class="card-meta"><div class="genre">Business · Marketing</div><div class="blurb">Preconception: rank on Google and customers find you. The ten blue links are gone. Be quotable instead.</div></div></a>
+<a class="card" href="/review-gating.html"><div class="cover" style="background:linear-gradient(135deg,#40141c,#140508)"><span>Review gating is fraud with a smile</span></div><div class="card-meta"><div class="genre">Business · Reputation</div><div class="blurb">Preconception: asking only happy customers for reviews is smart marketing. The law disagrees.</div></div></a>
+
+</div>
+<div class="sec" id="personal">Personal</div>
+<p class="sec-sub">Essays on law, culture, origins. No dogma, no cows spared.</p>
+<div class="grid">
+<a class="card" href="/christa-pike.html"><div class="cover" style="background:linear-gradient(135deg,#1a2a3a,#0c1520)"><span>Two doses and a heartbeat</span></div><div class="card-meta"><div class="genre">Personal · Law</div><div class="blurb">Tennessee fumbled an execution on Sept 30, 2026. Whatever you believe, the state must be able to carry out its own orders.</div></div></a>
+<a class="card" href="/long-way-home.html"><div class="cover" style="background:linear-gradient(135deg,#0c2040,#050a14)"><span>The Long Way Home</span></div><div class="card-meta"><div class="genre">Origins</div><div class="blurb">Preconception: we were created as humans.</div></div></a>
+<a class="card" href="/commonwealth.html"><div class="cover" style="background:linear-gradient(135deg,#1a2a3a,#0c1520)"><span>Commonwealth vs State</span></div><div class="card-meta"><div class="genre">Law</div><div class="blurb">Preconception: commonwealth runs courts differently than a state.</div></div></a>
+<a class="card" href="/abrahamic.html"><div class="cover" style="background:linear-gradient(135deg,#1a3040,#0c1520)"><span>Abrahamic Religions</span></div><div class="card-meta"><div class="genre">Comparison</div><div class="blurb">Judaism, Christianity, Islam — shared roots, no winner.</div></div></a>
+<a class="card" href="/self-made-myth.html"><div class="cover" style="background:linear-gradient(135deg,#2a1a30,#120c18)"><span>The Self-Made Myth</span></div><div class="card-meta"><div class="genre">Culture</div><div class="blurb">Preconception: successful people made it alone — no help, no luck, no systems.</div></div></a>
+
+</div>
 </main>
-<footer>© Leon Link · <a href="https://www.leonlink.net">Home</a><a href="https://www.leonlink.net">Apps</a><a href="https://www.leonlink.net">Games</a></footer>
+<footer>&copy; Leon Link &middot; <a href="https://www.leonlink.net">Home</a> &middot; <a href="https://www.leonlink.net/#work">Work</a></footer>
 </body>
 </html>
