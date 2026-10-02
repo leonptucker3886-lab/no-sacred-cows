@@ -107,8 +107,8 @@ mach.forEach(([n,t],i)=>{const b=document.createElement('button');b.className='c
 </div>
 <script>
 (function(){var n=document.getElementById('seatN'),p=document.getElementById('seatP'),o=document.getElementById('seatOut'),nv=document.getElementById('seatNv'),pv=document.getElementById('seatPv');
-function f(){var a=+n.value,b=+p.value;nv.textContent=a;pv.textContent='$'+b;var per=a*b,flat=Math.ceil(46.5*2),d=per-flat;
-o.innerHTML='Per-seat: <strong>$'+per+'/mo</strong> ($'+(per*12).toLocaleString()+'/yr)<br>Flat whole-crew: <strong>$46.50/mo</strong> ($'+(46.5*12).toLocaleString()+'/yr)<br>'+(d>0?'<span class="warn">Per-seat costs you $'+d.toLocaleString()+' more per month — $'+(d*12).toLocaleString()+' a year. That is a hire.</span>':'<span class="ok">At this size the gap is small. Watch it grow.</span>');}
+function f(){var a=+n.value,b=+p.value;nv.textContent=a;pv.textContent='$'+b;var per=a*b,flat=Math.ceil(54.5*2),d=per-flat;
+o.innerHTML='Per-seat: <strong>$'+per+'/mo</strong> ($'+(per*12).toLocaleString()+'/yr)<br>Flat whole-crew: <strong>$54.50/mo</strong> ($'+(54.5*12).toLocaleString()+'/yr)<br>'+(d>0?'<span class="warn">Per-seat costs you $'+d.toLocaleString()+' more per month — $'+(d*12).toLocaleString()+' a year. That is a hire.</span>':'<span class="ok">At this size the gap is small. Watch it grow.</span>');}
 n.oninput=f;p.oninput=f;f();})();
 </script>
 <p>That gap is not a rounding error. It is a payroll line item, and it grows every time you hire — which is exactly backwards. Your software should get cheaper per person as you grow, not more expensive. Every new tech should make the math better, not worse.</p>
